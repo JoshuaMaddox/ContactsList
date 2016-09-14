@@ -1,7 +1,11 @@
-// Add contacts to the list.
+// Add contacts to the list. name, phone number, address, email
 
 //Get the value of the form field input
 //Append the variable contianing the input value to the table
+
+$(document).ready(function(){
+  alert("connected");
+});
 
 // Render the list neatly.
 // Be able to update the data of any contact in your list.

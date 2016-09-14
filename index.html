@@ -10,22 +10,57 @@
 <body>
   <header>
     <div class="container main-title">
-      <h1>Todo List</h1>
+      <h1>Contact List</h1>
     </div><!-- CONTAINER -->
     <div class="container formFields">
       <div class="row">
-        
+        <form class="form-horizontal">
+          <div class="form-group">
+            <div class="col-sm-8 col-sm-offset-2">
+              <input type="text" class="form-control" id="fullName" placeholder="Full Name">
+            </div><!-- COL-->
+          </div><!-- FORM-GROUP -->
+          <div class="form-group">
+            <div class="col-sm-8 col-sm-offset-2">
+              <input type="text" class="form-control" id="mobileNumber" placeholder="MobileNumber">
+            </div><!-- COL-->
+          </div><!-- FORM-GROUP -->
+          <div class="form-group">
+            <div class="col-sm-8 col-sm-offset-2">
+              <input type="email" class="form-control" id="email" placeholder="Email">
+            </div><!-- COL-->
+          </div><!-- FORM-GROUP -->
+          <div class="form-group">
+            <div class="col-sm-8 col-sm-offset-2">
+              <input type="text" class="form-control" id="address" placeholder="Address">
+            </div><!-- COL-->
+          </div><!-- FORM-GROUP -->
+          <div class="form-group">
+            <div class="col-sm-8 col-sm-offset-2">
+              <input type="text" class="form-control" id="date" placeholder="Category">
+            </div><!-- COL-->
+          </div><!-- FORM-GROUP -->
+          <div class="form-group">
+            <div class="col-sm-8 col-sm-offset-2">
+              <button type="submit" class="btn btn-block btn-success btn-lg">Submit Contact</button>
+            </div>
+          </div>
+        </form>
       </div><!-- ROW -->
     </div><!-- CONTAINER -->
   </header>
-  <section class="contactInput">
+  <section class="contactInput text-center">
     <div class="container tableContainer">
       <div class="row">
         <div class="table-responsive">
           <table class="table">
               <thead>
                 <tr class="tableHeader">
-                  
+                  <th>Full Name</th>
+                  <th>Mobile Number</th>
+                  <th>Email</th>
+                  <th>Address</th>
+                  <th>Category</th>
                 </tr>
               </thead>
           </table>
@@ -35,5 +70,6 @@
   </section>
   <script   src="//code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
   <script   src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script   src="app.js"></script>
 </body>
 </html>
