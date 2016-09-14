@@ -12,9 +12,11 @@
     <div class="container main-title">
       <h1>Contact List</h1>
     </div><!-- CONTAINER -->
+  </header>
+  <section>
     <div class="container formFields">
       <div class="row">
-        <form class="form-horizontal">
+        <form id="contactFormEntry" class="form-horizontal">
           <div class="form-group">
             <div class="col-sm-8 col-sm-offset-2">
               <input type="text" class="form-control" id="fullName" placeholder="Full Name">
@@ -22,47 +24,57 @@
           </div><!-- FORM-GROUP -->
           <div class="form-group">
             <div class="col-sm-8 col-sm-offset-2">
-              <input type="text" class="form-control" id="mobileNumber" placeholder="MobileNumber">
+              <input type="text" class="form-control" id="mobileNumber" placeholder="Mobile Number">
             </div><!-- COL-->
           </div><!-- FORM-GROUP -->
           <div class="form-group">
             <div class="col-sm-8 col-sm-offset-2">
-              <input type="email" class="form-control" id="email" placeholder="Email">
+              <input type="email" class="form-control" id="emailAddy" placeholder="Email">
             </div><!-- COL-->
           </div><!-- FORM-GROUP -->
           <div class="form-group">
             <div class="col-sm-8 col-sm-offset-2">
-              <input type="text" class="form-control" id="address" placeholder="Address">
+              <input type="text" class="form-control" id="contAddress" placeholder="Address">
             </div><!-- COL-->
           </div><!-- FORM-GROUP -->
           <div class="form-group">
             <div class="col-sm-8 col-sm-offset-2">
-              <input type="text" class="form-control" id="date" placeholder="Category">
+              <input type="text" class="form-control" id="cateGory" placeholder="Category">
             </div><!-- COL-->
           </div><!-- FORM-GROUP -->
           <div class="form-group">
             <div class="col-sm-8 col-sm-offset-2">
-              <button type="submit" class="btn btn-block btn-success btn-lg">Submit Contact</button>
+              <button type="submit" class="submitContact btn btn-block btn-success btn-lg">Submit Contact</button>
             </div>
           </div>
         </form>
+
       </div><!-- ROW -->
     </div><!-- CONTAINER -->
-  </header>
+  </section> <!-- FORM SECTION -->
   <section class="contactInput text-center">
     <div class="container tableContainer">
       <div class="row">
         <div class="table-responsive">
-          <table class="table">
+          <table id='contactsTable' class="table">
               <thead>
                 <tr class="tableHeader">
-                  <th>Full Name</th>
-                  <th>Mobile Number</th>
-                  <th>Email</th>
-                  <th>Address</th>
-                  <th>Category</th>
+                  <th class="text-center">Full Name</th>
+                  <th class="text-center">Mobile Number</th>
+                  <th class="text-center">Email</th>
+                  <th class="text-center">Address</th>
+                  <th class="text-center">Category</th>
                 </tr>
               </thead>
+              <tbody class="mainTable">
+                <tr id="templateTableRow">
+                  <td class="fullName"></td>                    
+                  <td class="mobileNumber"></td>
+                  <td class="emailAddy"></td>
+                  <td class="contAddress"></td>
+                  <td class="cateGory"></td> 
+                </tr>
+              </tbody>
           </table>
         </div><!-- TABLE-RESPONSIVE -->
       </div><!-- ROW -->
