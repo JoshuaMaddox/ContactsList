@@ -68,7 +68,12 @@ function removeContact(event){
   let $target = $(event.target);
   $target.closest('tr').remove();
 }
-//Get a random image for each row
+
+//An autofocus effect from bootstrap
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').focus()
+})
+
 
   
 
