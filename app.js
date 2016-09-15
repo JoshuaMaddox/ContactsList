@@ -1,8 +1,10 @@
 // Add contacts to the list. name, phone number, address, email
-let contactImg, $fullName, $mobileNumber, $emailAddy, $contAddress, $cateGory, $contactsTable; 
+let contactImg, $fullName, $mobileNumber, $emailAddy, $contAddress, $cateGory, $contactsTable, allContactsEntry, allContacts; 
 
 //Append the variable contianing the input value to the table
 $(() => {
+  allContactsEntry = [];
+  allContacts = [];
   $contactImg = $('#contactImg');
   $fullName = $('#fullName'); 
   $mobileNumber = $('#mobileNumber');  
@@ -53,6 +55,11 @@ function storeContact(event) {
   
 
 function createNewRow(contactImg, fullName, mobileNumber, emailAddy, contAddress, cateGory) {
+  //Storing Data to the all Contacts array
+  allContactsEntry = Array.prototype.slice.call(arguments); //store args
+  allContacts.push(allContactsEntry);
+  console.log('I am allContacts: ', allContacts);
+  //Storing Data to the all Contacts array END
   let $row = $('#templateTableRow').clone();
   $row.removeAttr('id');
   $row.children('.contactImg').html(contactImg);
