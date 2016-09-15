@@ -1,8 +1,9 @@
 // Add contacts to the list. name, phone number, address, email
-let $fullName, $mobileNumber, $emailAddy, $contAddress, $cateGory, $contactsTable; 
+let contactImg, $fullName, $mobileNumber, $emailAddy, $contAddress, $cateGory, $contactsTable; 
 
 //Append the variable contianing the input value to the table
 $(() => {
+  $contactImg = $('#contactImg');
   $fullName = $('#fullName'); 
   $mobileNumber = $('#mobileNumber');  
   $emailAddy = $('#emailAddy'); 
@@ -11,24 +12,50 @@ $(() => {
   $contactsTable = $('#contactsTable')
   $('#contactFormEntry').submit(storeContact);
   $contactsTable.on('click', '.deleteBtn', removeContact);
+
 });
 
+let contactImages = [
+  '<img src="http://i.imgur.com/ceHoqxZ.png" width="30px "class="contactImg">',
+  '<img src="http://i.imgur.com/KSByAzt.png" width="30px "class="contactImg">',
+  '<img src="http://i.imgur.com/YizvODO.png" width="30px "class="contactImg">',
+  '<img src="http://i.imgur.com/5oiqneO.png" width="30px "class="contactImg">',
+  '<img src="http://i.imgur.com/HV72R1v.png" width="30px "class="contactImg">',
+  '<img src="http://i.imgur.com/pT3IDG2.png" width="30px "class="contactImg">',
+  '<img src="http://i.imgur.com/rrMbhXA.png" width="30px "class="contactImg">',
+  '<img src="http://i.imgur.com/esxzuBy.png" width="30px "class="contactImg">',
+  '<img src="http://i.imgur.com/mObT8Sc.png" width="30px "class="contactImg">',
+  '<img src="http://i.imgur.com/rzw8Kgf.png" width="30px "class="contactImg">',
+  '<img src="http://i.imgur.com/m90MLOL.png" width="30px "class="contactImg">',
+  '<img src="http://i.imgur.com/OxYcfRK.png" width="30px "class="contactImg">',
+  '<img src="http://i.imgur.com/sdc5xxm.png" width="30px "class="contactImg">',
+  '<img src="http://i.imgur.com/vlcfHWc.png" width="30px "class="contactImg">',
+  '<img src="http://i.imgur.com/HuJN6Hi.png" width="30px "class="contactImg">',
+  '<img src="http://i.imgur.com/2oLRhyP.png" width="30px "class="contactImg">',
+  '<img src="http://i.imgur.com/Ty0wp4U.png" width="30px "class="contactImg">',
+  '<img src="http://i.imgur.com/T3bY849.png" width="30px "class="contactImg">',
+  '<img src="http://i.imgur.com/9pkQx2P.png" width="30px "class="contactImg">',
+  '<img src="http://i.imgur.com/zSdUPEv.png" width="30px "class="contactImg">'
+]
+
 function storeContact(event) {
-  event.preventDefault()
+  event.preventDefault();
+  contactImg = contactImages[Math.floor(Math.random()*contactImages.length)];
   let fullName = $fullName.val(); 
   let mobileNumber = $mobileNumber.val();  
   let emailAddy = $emailAddy.val(); 
   let contAddress = $contAddress.val(); 
   let cateGory = $cateGory.val();
-  let $row = createNewRow(fullName, mobileNumber, emailAddy, contAddress, cateGory);
+  let $row = createNewRow(contactImg, fullName, mobileNumber, emailAddy, contAddress, cateGory);
   $contactsTable.append($row);
 }
 
   
 
-function createNewRow(fullName, mobileNumber, emailAddy, contAddress, cateGory) {
+function createNewRow(contactImg, fullName, mobileNumber, emailAddy, contAddress, cateGory) {
   let $row = $('#templateTableRow').clone();
   $row.removeAttr('id');
+  $row.children('.contactImg').html(contactImg);
   $row.children('.fullName').text(fullName);
   $row.children('.mobileNumber').text(mobileNumber);
   $row.children('.emailAddy').text(emailAddy);
@@ -41,29 +68,13 @@ function removeContact(event){
   let $target = $(event.target);
   $target.closest('tr').remove();
 }
+//Get a random image for each row
 
-var contactImages = [
-  '<img src="http://i.imgur.com/ceHoqxZ.png" class="contactImg">',
-  '<img src="http://i.imgur.com/KSByAzt.png" class="contactImg">',
-  '<img src="http://i.imgur.com/YizvODO.png" class="contactImg">',
-  '<img src="http://i.imgur.com/5oiqneO.png" class="contactImg">',
-  '<img src="http://i.imgur.com/HV72R1v.png" class="contactImg">',
-  '<img src="http://i.imgur.com/pT3IDG2.png" class="contactImg">',
-  '<img src="http://i.imgur.com/rrMbhXA.png" class="contactImg">',
-  '<img src="http://i.imgur.com/esxzuBy.png" class="contactImg">',
-  '<img src="http://i.imgur.com/mObT8Sc.png" class="contactImg">',
-  '<img src="http://i.imgur.com/rzw8Kgf.png" class="contactImg">',
-  '<img src="http://i.imgur.com/m90MLOL.png" class="contactImg">',
-  '<img src="http://i.imgur.com/OxYcfRK.png" class="contactImg">',
-  '<img src="http://i.imgur.com/sdc5xxm.png" class="contactImg">',
-  '<img src="http://i.imgur.com/vlcfHWc.png" class="contactImg">',
-  '<img src="http://i.imgur.com/HuJN6Hi.png" class="contactImg">',
-  '<img src="http://i.imgur.com/2oLRhyP.png" class="contactImg">',
-  '<img src="http://i.imgur.com/Ty0wp4U.png" class="contactImg">',
-  '<img src="http://i.imgur.com/T3bY849.png" class="contactImg">',
-  '<img src="http://i.imgur.com/9pkQx2P.png" class="contactImg">',
-  '<img src="http://i.imgur.com/zSdUPEv.png" class="contactImg">'
-]
+  
+
+
+
+
 
   // let contactsObj = {
   //   fullname: fullName,

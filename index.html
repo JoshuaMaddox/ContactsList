@@ -19,6 +19,11 @@
         <form id="contactFormEntry" class="form-horizontal">
           <div class="form-group">
             <div class="col-sm-8 col-sm-offset-2">
+              <input type="text" class="form-control" id="contactImg" placeholder="Img URL">
+            </div><!-- COL-->
+          </div><!-- FORM-GROUP -->
+          <div class="form-group">
+            <div class="col-sm-8 col-sm-offset-2">
               <input type="text" class="form-control" id="fullName" placeholder="Full Name">
             </div><!-- COL-->
           </div><!-- FORM-GROUP -->
@@ -59,8 +64,9 @@
           <table id='contactsTable' class="table table-striped">
               <thead>
                 <tr class="tableHeader">
-                  <th class="text-center">Full Name</th>
-                  <th class="text-center">Mobile Number</th>
+                  <th class="text-center">Image</th>
+                  <th class="text-center">Name</th>
+                  <th class="text-center">Mobile</th>
                   <th class="text-center">Email</th>
                   <th class="text-center">Address</th>
                   <th class="text-center">Category</th>
@@ -77,6 +83,7 @@
   <table class="hidden">
     <tbody>
       <tr id="templateTableRow">
+        <td class="contactImg"></td>
         <td class="fullName"></td>                    
         <td class="mobileNumber"></td>
         <td class="emailAddy"></td>
