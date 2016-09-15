@@ -21,7 +21,8 @@
     </div><!-- CONTAINER -->
   </section><!-- MODAL TRIGGER END -->
   <section class="contactInput text-center"><!-- TABLE -->
-    <p>Click On Header Items to Filter Results</p>
+    <p>Click On Table Headers to Filter Results</p>
+    <p>To Edit, click on any cell and enter in the desired input</p> 
     <div class="container tableContainer">
       <div class="row">
         <div class="table-responsive">
@@ -47,14 +48,13 @@
   <table class="hidden"><!-- HIDDEN TABLE -->
     <tbody>
       <tr id="templateTableRow">
-        <td contenteditable class="contactImg"></td>
+        <td class="contactImg"></td>
         <td contenteditable class="fullName"></td>                    
         <td contenteditable class="mobileNumber"></td>
         <td contenteditable class="emailAddy"></td>
         <td contenteditable class="contAddress"></td>
         <td contenteditable class="cateGory"></td>
-        <td contenteditable class="deleteContact">
-          <button class="btn btn-sm btn-danger editBtn">Edit</button>
+        <td class="deleteContact">
           <button class="btn btn-sm btn-danger deleteBtn">X</button>
         </td>
       </tr>
@@ -77,11 +77,6 @@
           <div class="container formFields">
             <div class="row">
               <form id="contactFormEntry" class="form-horizontal">
-                <div class="form-group">
-                  <div class="col-sm-6 text-center">
-                    <input type="text" class="form-control" id="contactImg" placeholder="Img URL">
-                  </div><!-- COL-->
-                </div><!-- FORM-GROUP -->
                 <div class="form-group">
                   <div class="col-sm-6 text-center">
                     <input type="text" class="form-control" id="fullName" placeholder="Full Name">
