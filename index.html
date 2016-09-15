@@ -56,7 +56,7 @@
     <div class="container tableContainer">
       <div class="row">
         <div class="table-responsive">
-          <table id='contactsTable' class="table">
+          <table id='contactsTable' class="table table-striped">
               <thead>
                 <tr class="tableHeader">
                   <th class="text-center">Full Name</th>
@@ -66,20 +66,29 @@
                   <th class="text-center">Category</th>
                 </tr>
               </thead>
-              <tbody class="mainTable">
-                <tr id="templateTableRow">
-                  <td class="fullName"></td>                    
-                  <td class="mobileNumber"></td>
-                  <td class="emailAddy"></td>
-                  <td class="contAddress"></td>
-                  <td class="cateGory"></td> 
-                </tr>
+              <tbody class="mainTable">  
               </tbody>
           </table>
         </div><!-- TABLE-RESPONSIVE -->
       </div><!-- ROW -->
     </div><!-- CONTAINER -->
   </section>
+  <!-- HIDDEN TABLE -->
+  <table class="hidden">
+    <tbody>
+      <tr id="templateTableRow">
+        <td class="fullName"></td>                    
+        <td class="mobileNumber"></td>
+        <td class="emailAddy"></td>
+        <td class="contAddress"></td>
+        <td class="cateGory"></td> 
+        <td class="deleteContact">
+          <button class="btn btn-sm btn-danger deleteBtn">X</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- HIDDEN TABLE END -->
   <script   src="//code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
   <script   src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script   src="app.js"></script>

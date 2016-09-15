@@ -10,6 +10,7 @@ $(() => {
   $cateGory = $('#cateGory');
   $contactsTable = $('#contactsTable')
   $('#contactFormEntry').submit(storeContact);
+  $contactsTable.on('click', '.deleteBtn', removeContact);
 });
 
 function storeContact(event) {
@@ -19,56 +20,65 @@ function storeContact(event) {
   let emailAddy = $emailAddy.val(); 
   let contAddress = $contAddress.val(); 
   let cateGory = $cateGory.val();
-  let contactsObj = {
-    fullname: fullName,
-    mobilenumber: mobileNumber,
-    email: emailAddy,
-    address: contAddress,
-    category: cateGory
-  } 
-  console.log("I am fullName: " + fullName);
-  console.log("I am mobileNumber: " + mobileNumber);
-  console.log("I am emailAddy: " + emailAddy);
-  console.log("I am contAddress: " + contAddress);
-  console.log("I am cateGory: " + cateGory);
+  let $row = createNewRow(fullName, mobileNumber, emailAddy, contAddress, cateGory);
+  $contactsTable.append($row);
 }
 
+  
 
-  let $row = createNewRow(fullName, mobileNumber, emailAddy, contAddress, cateGory);
+function createNewRow(fullName, mobileNumber, emailAddy, contAddress, cateGory) {
+  let $row = $('#templateTableRow').clone();
+  $row.removeAttr('id');
+  $row.children('.fullName').text(fullName);
+  $row.children('.mobileNumber').text(mobileNumber);
+  $row.children('.emailAddy').text(emailAddy);
+  $row.children('.contAddress').text(contAddress);
+  $row.children('.cateGory').text(cateGory);
+  return $row;
+} 
 
-  $contactsTable.append($row);
+function removeContact(event){
+  let $target = $(event.target);
+  $target.closest('tr').remove();
+}
 
-  function createNewRow() {
-    let $row = $('#templateTableRow').clone();
-  }
+var contactImages = [
+  '<img src="http://i.imgur.com/ceHoqxZ.png" class="contactImg">',
+  '<img src="http://i.imgur.com/KSByAzt.png" class="contactImg">',
+  '<img src="http://i.imgur.com/YizvODO.png" class="contactImg">',
+  '<img src="http://i.imgur.com/5oiqneO.png" class="contactImg">',
+  '<img src="http://i.imgur.com/HV72R1v.png" class="contactImg">',
+  '<img src="http://i.imgur.com/pT3IDG2.png" class="contactImg">',
+  '<img src="http://i.imgur.com/rrMbhXA.png" class="contactImg">',
+  '<img src="http://i.imgur.com/esxzuBy.png" class="contactImg">',
+  '<img src="http://i.imgur.com/mObT8Sc.png" class="contactImg">',
+  '<img src="http://i.imgur.com/rzw8Kgf.png" class="contactImg">',
+  '<img src="http://i.imgur.com/m90MLOL.png" class="contactImg">',
+  '<img src="http://i.imgur.com/OxYcfRK.png" class="contactImg">',
+  '<img src="http://i.imgur.com/sdc5xxm.png" class="contactImg">',
+  '<img src="http://i.imgur.com/vlcfHWc.png" class="contactImg">',
+  '<img src="http://i.imgur.com/HuJN6Hi.png" class="contactImg">',
+  '<img src="http://i.imgur.com/2oLRhyP.png" class="contactImg">',
+  '<img src="http://i.imgur.com/Ty0wp4U.png" class="contactImg">',
+  '<img src="http://i.imgur.com/T3bY849.png" class="contactImg">',
+  '<img src="http://i.imgur.com/9pkQx2P.png" class="contactImg">',
+  '<img src="http://i.imgur.com/zSdUPEv.png" class="contactImg">'
+]
 
-
-
-
-// function init() {
-//   //   var contactsObj = {};
-//   $('.submitContact').click(storeInputVariables);
-// }
- 
-
-
-
-//Get the value of the form field input
-// function storeContact() {
-  // fullName = $('#fullName').val();
-  // mobileNumber = $('#mobileNumber').val();
-  // emailAddy = $('#emailAddy').val();
-  // contAddress = $('#contAddress').val();
-  // cateGory = $('#cateGory').val();
-  // contactsObj = {
+  // let contactsObj = {
   //   fullname: fullName,
   //   mobilenumber: mobileNumber,
   //   email: emailAddy,
   //   address: contAddress,
   //   category: cateGory
-//   }
-  
-// }
+  // } 
+
+  // console.log("I am fullName: " + fullName);
+  // console.log("I am mobileNumber: " + mobileNumber);
+  // console.log("I am emailAddy: " + emailAddy);
+  // console.log("I am contAddress: " + contAddress);
+  // console.log("I am cateGory: " + cateGory);
+
 
 
 
